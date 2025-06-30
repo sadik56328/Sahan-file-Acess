@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sahan Global Health File Access - Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1 id="welcomeText">Ku soo dhowow Sahan Global Health File Access</h1>
+    <div class="lang-switch">
+      <button onclick="setLanguage('so')">Somali</button>
+      <button onclick="setLanguage('en')">English</button>
+    </div>
+    <nav>
+      <a href="index.html" id="navHome">Bogga Hore</a>
+      <a href="awareness.html" id="navAwareness">Wacyigelin</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2 id="diagnosisTitle">Baritaan</h2>
+      <p>Xogta baritaanka caafimaad ee qofka...</p>
+    </section>
+    <section>
+      <h2 id="medicationTitle">Daawooyinka</h2>
+      <p>Liiska daawooyinka uu isticmaalayo...</p>
+    </section>
+    <section>
+      <h2 id="sideEffectsTitle">Waxyeelada Daawooyinka</h2>
+      <p>Wacyigelin ku saabsan waxyeelada daawooyinka haddii si xad dhaaf ah loo qaato...</p>
+    </section>
+    <section>
+      <h2 id="downloadTitle">Soo deji Faylka Caafimaadka</h2>
+      <button onclick="showCommissionNotice()" id="downloadButton">Soo deji Faylka Caafimaadka</button>
+      <p id="downloadNote" style="color:red; font-weight: bold;"></p>
+    </section>
+    <section>
+      <h2>Link-ka Gaar ah (Private)</h2>
+      <input type="text" value="https://sahanhealth.com/view-file.html?id=123abc&token=xyz890" readonly style="width:100%">
+      <p>La wadaag link-kan xarunta caafimaadka ama dhakhtarkaaga.</p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Sahan Global Health. All rights reserved.</p>
+  </footer>
+  <script>
+    const translations = {
+      so: {
+        welcomeText: "Ku soo dhowow Sahan Global Health File Access",
+        navHome: "Bogga Hore",
+        navAwareness: "Wacyigelin",
+        diagnosisTitle: "Baritaan",
+        medicationTitle: "Daawooyinka",
+        sideEffectsTitle: "Waxyeelada Daawooyinka",
+        downloadTitle: "Soo deji Faylka Caafimaadka",
+        downloadButton: "Soo deji Faylka Caafimaadka",
+        downloadNote: "Lacag yar ayaa laga jari doonaa si aad u soo dejiso faylka – adeegga wuu xiran yahay hadda."
+      },
+      en: {
+        welcomeText: "Welcome to Sahan Global Health File Access",
+        navHome: "Home",
+        navAwareness: "Awareness",
+        diagnosisTitle: "Diagnosis",
+        medicationTitle: "Medications",
+        sideEffectsTitle: "Side Effects",
+        downloadTitle: "Download Medical File",
+        downloadButton: "Download My Medical File",
+        downloadNote: "Commission payment required – currently disabled."
+      }
+    };
+
+    function setLanguage(lang) {
+      for (const id in translations[lang]) {
+        document.getElementById(id).innerText = translations[lang][id];
+      }
+    }
+
+    function showCommissionNotice() {
+      const lang = document.getElementById("welcomeText").innerText.includes("Ku soo dhowow") ? "so" : "en";
+      document.getElementById("downloadNote").innerText = translations[lang].downloadNote;
+    }
+  </script>
+</body>
+</html>

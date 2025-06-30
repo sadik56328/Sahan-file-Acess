@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wacyigelin - Sahan Global Health</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1 id="awarenessHeader">Wacyigelin Caafimaad</h1>
+    <div class="lang-switch">
+      <button onclick="setLanguage('so')">Somali</button>
+      <button onclick="setLanguage('en')">English</button>
+    </div>
+    <nav>
+      <a href="index.html" id="navHome">Bogga Hore</a>
+      <a href="dashboard.html" id="navDashboard">Dashboard</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2 id="tipTitle1">Talo: Ka digtoonow isticmaalka xad dhaafka ah ee daawooyinka</h2>
+      <p id="tipText1">
+        Daawo walba waxay leedahay saameyn wanaagsan iyo mid waxyeelo leh haddii si khaldan loo qaato. La tasho dhakhtar ka hor intaadan isticmaalin daawo.
+      </p>
+    </section>
+
+    <section>
+      <h2 id="tipTitle2">Talo: Cunto caafimaad leh</h2>
+      <p id="tipText2">
+        Isku day inaad cunto khudrad badan, cab biyo badan, kana fogow cuntooyinka dufanka badan leh si aad uga hortagto cudurrada.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Sahan Global Health. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const translations = {
+      so: {
+        awarenessHeader: "Wacyigelin Caafimaad",
+        navHome: "Bogga Hore",
+        navDashboard: "Dashboard",
+        tipTitle1: "Talo: Ka digtoonow isticmaalka xad dhaafka ah ee daawooyinka",
+        tipText1: "Daawo walba waxay leedahay saameyn wanaagsan iyo mid waxyeelo leh haddii si khaldan loo qaato. La tasho dhakhtar ka hor intaadan isticmaalin daawo.",
+        tipTitle2: "Talo: Cunto caafimaad leh",
+        tipText2: "Isku day inaad cunto khudrad badan, cab biyo badan, kana fogow cuntooyinka dufanka badan leh si aad uga hortagto cudurrada."
+      },
+      en: {
+        awarenessHeader: "Health Awareness",
+        navHome: "Home",
+        navDashboard: "Dashboard",
+        tipTitle1: "Tip: Be cautious with overuse of medications",
+        tipText1: "Every medicine has benefits and risks if misused. Always consult a doctor before use.",
+        tipTitle2: "Tip: Eat healthy food",
+        tipText2: "Try to eat more vegetables, drink enough water, and avoid fatty foods to prevent diseases."
+      }
+    };
+
+    function setLanguage(lang) {
+      for (const id in translations[lang]) {
+        document.getElementById(id).innerText = translations[lang][id];
+      }
+    }
+  </script>
+</body>
+</html>

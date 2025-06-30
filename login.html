@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - Sahan Global Health</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Sahan Global Health File Access</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+  <main>
+    <section class="form-section">
+      <h2>Login to Your Account</h2>
+      <form id="loginForm">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Sahan Global Health. All rights reserved.</p>
+  </footer>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const savedUser = JSON.parse(localStorage.getItem("sahanUser"));
+      if (savedUser && savedUser.email === email && savedUser.password === password) {
+        alert("Login successful!");
+        localStorage.setItem("sahanLoggedIn", "true");
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Email ama password-ka waa khaldan.");
+      }
+    });
+  </script>
+</body>
+</html>
